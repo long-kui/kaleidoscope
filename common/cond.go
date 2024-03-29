@@ -7,3 +7,11 @@ func Map[T any, N any](arr []T, block func(it T) N) []N {
 	}
 	return retArr
 }
+
+func Must(errs ...error) {
+	for _, err := range errs {
+		if err != nil {
+			panic(err)
+		}
+	}
+}
